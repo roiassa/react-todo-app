@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Spinner from 'react-bootstrap/Spinner'
 
 function Welcome() {
     const [welcome, setLoad] = useState(true)
@@ -15,7 +16,7 @@ function Welcome() {
         <div>
             {welcome ? <div>
                 <h1>Welcome to my React Todo App!</h1>
-                <p>Loading...</p> </div> : null}
+                <p>Loading...</p> <Spinner animation="border" variant="danger" /> </div>  : null}
         </div>
     )
 }
