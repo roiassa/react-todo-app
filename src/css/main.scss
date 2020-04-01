@@ -13,3 +13,9 @@ body {
     display: flex;
     font-family: "Sans Serif", sans-serif;
 }
+
+#root {
+    height: 100%;
+    width: 100%;
+}
+@import "header.scss"
