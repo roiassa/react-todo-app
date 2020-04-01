@@ -13,11 +13,12 @@ function Welcome() {
     }, [])
 
     return (
-        <div>
-            {welcome ? <div>
-                <h1>Welcome to my React Todo App!</h1>
-                <p>Loading...</p> <Spinner animation="border" variant="danger" /> </div>  : null}
-        </div>
+        <React.Fragment>
+            {welcome ? <div className="welcomeDiv">
+                <div className="loadingDiv">
+                    <h1>Welcome to my React Todo App!</h1>
+                    <p>Loading...</p> <Spinner animation="border" variant="danger" /> </div></div> : null}
+        </React.Fragment>
     )
 }
 

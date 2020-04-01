@@ -10,9 +10,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div>
-        <Welcome />
-      </div>
+      <Welcome />
     </div>
   )
 }
