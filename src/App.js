@@ -13,12 +13,12 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <React.Fragment>
         <Header />
         <Welcome />
         <SideBar />
-        <Route exact path="/about" component={Header,About}></Route>
-      </div>
+        <Route exact path="/about" component={Header, About}></Route>
+      </React.Fragment>
     </Router>
   )
 }
