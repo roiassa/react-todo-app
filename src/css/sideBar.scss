@@ -40,14 +40,8 @@
         }
     }
     .icon-user {
-        font-size: 20px;
-        color: $theme-grey;
-        margin-top: 10px;
+        @extend .icon-home;
         margin-left: 14px;
-        margin-bottom: 15px;
-        &:hover {
-            cursor: pointer;
-        }
     }
 
     .nav-link {
