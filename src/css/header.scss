@@ -1,13 +1,25 @@
 .header {
     display: flex;
+    align-items: center;
     height: 135px;
     width: 100%;
     background-color: $theme-grey;
 
-    .maple {
+    img {
         width: 200px;
         height: 120px;
         margin-top: 10px;
+    }
+
+    h1 {
+        font-size: 50px;
+        color: $theme-red;
+        margin-left: 500px;
+        &:hover {
+            cursor: default;
+            color: white;
+            text-shadow: 2px 2px 8px $theme-red;
+        }
     }
 }
 
