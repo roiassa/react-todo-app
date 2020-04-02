@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Spinner from 'react-bootstrap/Spinner'
 
+
 function Welcome() {
     const [welcome, setLoad] = useState(true)
 
