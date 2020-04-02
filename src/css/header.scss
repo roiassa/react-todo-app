@@ -15,8 +15,20 @@
         font-size: 50px;
         color: $theme-red;
         margin-left: 500px;
+        margin-right: 500px;
         &:hover {
             cursor: default;
+            color: white;
+            text-shadow: 2px 2px 8px $theme-red;
+        }
+    }
+
+    button {
+        border: none;
+        background: none;
+        margin: 10px;
+        color: $theme-red;
+        &:hover {
             color: white;
             text-shadow: 2px 2px 8px $theme-red;
         }
