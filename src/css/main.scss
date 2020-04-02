@@ -1,3 +1,7 @@
+$theme-grey: #333333;
+$theme-red: #A62C2A;
+
+
 * {
     margin: 0;
     padding: 0;
@@ -18,4 +22,4 @@ body {
     height: 100%;
     width: 100%;
 }
-@import "header.scss", "welcome.scss";
+@import "header.scss", "welcome.scss", "sideBar.scss";

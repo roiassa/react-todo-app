@@ -1,0 +1,22 @@
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    background-color: $theme-red;
+    height: 803px;
+    width: 5%;
+    transition: all ease-in-out 0.5s;
+
+    &:hover {
+        width:10%
+    }
+
+    &:hover .nav-link {
+        display: block;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: black;
+        display: none;
+    }
+}

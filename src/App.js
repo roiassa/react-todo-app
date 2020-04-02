@@ -16,7 +16,8 @@ function App() {
       <div>
         <Header />
         <Welcome />
-        <Route exact path="/about" component={Header,About,SideBar}></Route>
+        <SideBar />
+        <Route exact path="/about" component={Header,About}></Route>
       </div>
     </Router>
   )
