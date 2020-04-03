@@ -23,15 +23,25 @@
     }
 
     .sections {
+        display: flex;
         width: 100%;
+        div {
+            width: 50%;
+            
+        }
         .buttons {
             background: $theme-red;
             color: $theme-grey;
             border-color: $theme-red;
             border: solid;
-            width: 50%;
+            width: 100%;
+            padding: 5px;
             &:hover {
                 color: white;
+            }
+
+            .icon-briefcase, .icon-check {
+                margin-right: 5px;
             }
         }
     }
