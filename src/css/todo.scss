@@ -1,0 +1,56 @@
+.todo-window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $theme-grey;
+    margin: auto;
+    margin-top: 100px;
+    width: 30%;
+    height: 500px;
+    border: 5px solid $theme-red;
+
+    h1 {
+        color: $theme-red;
+        display: inline-block;
+        &:hover {
+            cursor: default;
+        }
+    }
+
+    .sections {
+        width: 100%;
+        .buttons {
+            background: $theme-red;
+            color: $theme-grey;
+            border-color: $theme-red;
+            border: solid;
+            width: 50%;
+            &:hover {
+                color: white;
+            }
+        }
+    }
+
+    .submit-div {
+        width: 95%;
+        margin-top: 5px;
+        input {
+            width: 340px;
+            outline: none;
+        }
+        
+        button {
+            height: 100%;
+            width: 60px;
+            background: $theme-red;
+            color: $theme-grey;
+            border-color: $theme-red;
+            border: none;
+            border-radius: 0px 20px 20px 0px;
+            outline: none;
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
