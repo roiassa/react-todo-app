@@ -3,7 +3,7 @@
     align-items: center;
     height: 135px;
     width: 100%;
-    background-color: $theme-grey;
+    background-color: rgb(36, 35, 35);
 
     img {
         width: 200px;
@@ -28,6 +28,7 @@
         background: none;
         margin: 10px;
         color: $theme-red;
+        outline: none;
         &:hover {
             color: white;
             text-shadow: 2px 2px 8px $theme-red;

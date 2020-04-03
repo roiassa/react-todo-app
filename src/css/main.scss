@@ -22,5 +22,6 @@ body {
 #root {
     height: 100%;
     width: 100%;
+    background-color: $theme-grey;
 }
 @import "header.scss", "welcome.scss", "sideBar.scss", "about.scss", "todo.scss";
