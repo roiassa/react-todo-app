@@ -26,9 +26,9 @@ body {
     text-decoration: none;
 }
 
-a, span {
+a, span, button {
     text-decoration: none !important;
-    outline: none;
+    outline: none !important;
     &:hover {
         text-decoration: none !important;
     }
