@@ -23,5 +23,14 @@ body {
     height: 100%;
     width: 100%;
     background-color: $theme-grey;
+    text-decoration: none;
+}
+
+a, span {
+    text-decoration: none !important;
+    outline: none;
+    &:hover {
+        text-decoration: none !important;
+    }
 }
 @import "header.scss", "welcome.scss", "sideBar.scss", "about.scss", "todo.scss";

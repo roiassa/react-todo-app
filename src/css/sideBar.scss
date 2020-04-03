@@ -3,8 +3,8 @@
     display: flex;
     flex-direction: column;
     background-color: $theme-red;
-    height: 803px;
-    width: 5%;
+    height: 100%;
+    width: 3%;
     transition: all ease-in-out 0.5s;
 
     &:hover {
@@ -20,7 +20,7 @@
         &:hover {
            background-color:$theme-hover-grey;
            cursor: pointer;
-           .icon {
+           .icon-home {
                color:$theme-red;
            }
            .nav-link {
