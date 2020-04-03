@@ -1,8 +1,10 @@
 .welcomeDiv {
     display: flex;
     align-items: center;
+    position: fixed;
+    width: 100%;
     height: 804px;
-    background: aqua;
+    z-index: 2;
 
     .loadingDiv {
         display: flex;
