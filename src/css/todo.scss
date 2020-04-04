@@ -46,9 +46,11 @@
         }
     }
 
-    .submit-div {
+    .submit-form {
         width: 95%;
         margin-top: 5px;
+        display: flex;
+        justify-content: center;
         input {
             width: 370px;
             margin-left: 20px;
