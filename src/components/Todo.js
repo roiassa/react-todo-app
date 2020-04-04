@@ -7,10 +7,10 @@ import { faCheck, faBriefcase } from '@fortawesome/free-solid-svg-icons'
 function Todo() {
     const [tasks, setTasks] = useState([])
     const [input, setInput] = useState('')
-    
+
     function handleSubmit(e) {
         e.preventDefault();
-        if (!input) {return;}
+        if (!input) { return; }
         setTasks([...tasks, input])
         console.log(input)
         setInput('');
@@ -37,7 +37,7 @@ function Todo() {
             </form>
             <div className="todo-list">
                 {tasks.map((task, index) => {
-                    return <div key={index}>
+                    return <div className="todo-item" key={index}>
                         <span >{task}</span>
                         <button>Done</button>
                         <button>Remove</button>

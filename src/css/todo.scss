@@ -48,9 +48,10 @@
 
     .submit-form {
         width: 95%;
-        margin-top: 5px;
+        margin-top: 10px;
         display: flex;
         justify-content: center;
+        margin-bottom: 20px;
         input {
             width: 370px;
             margin-left: 20px;
@@ -69,5 +70,60 @@
                 color: white;
             }
         }
+    }
+
+    .todo-list {
+        width: 100%;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        
+      
+
+        .todo-item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: 2px solid rgb(36, 35, 35);
+            &:hover {
+                background: $theme-red;
+                
+                cursor: pointer;
+                span {
+                    color: $theme-grey;
+                }
+
+                button {
+                    color: $theme-red;
+                    background-color: $theme-grey;
+                }
+                
+            }
+            span {
+                color: $theme-red;
+                width: 75%;
+                padding-left: 5px;
+                &:hover {
+                    color: white;
+                }
+            }
+    
+            button {
+                background: $theme-red;
+                color: $theme-grey;
+                border-color: $theme-red;
+                border-radius: 30px 30px 30px 30px;
+                border-style: none;
+                padding: 5px;
+                margin-right: 7px;
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+        
     }
 }

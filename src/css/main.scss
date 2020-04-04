@@ -26,6 +26,12 @@ body {
     text-decoration: none;
 }
 
+h1, h2, p, span {
+    &:hover {
+        cursor: default;
+    }
+}
+
 a, span, button {
     text-decoration: none !important;
     outline: none !important;
