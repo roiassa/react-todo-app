@@ -7,7 +7,7 @@ import { faCheck, faBriefcase } from '@fortawesome/free-solid-svg-icons'
 function Todo() {
     const [tasks, setTasks] = useState([])
     const [input, setInput] = useState('')
-    const [taskList, setTaskList] = useState(null)
+    const [taskList, setTaskList] = useState(true)
     
     function handleSubmit(e) {
         e.preventDefault();
@@ -15,21 +15,18 @@ function Todo() {
         setTasks([...tasks, input])
         setInput('');
     }
-
-
    
-
     return (
         <div className="todo-window">
             {taskList ? <h1>Tasks</h1>: <h1>Done</h1>}
             <div className="sections">
                 <div>
-                    <button className="buttons" onClick={() => setTaskList(taskList === false)}>
+                    <button className="buttons" onClick={() => setTaskList(true)}>
                         <FontAwesomeIcon icon={faBriefcase} className="icon-briefcase" />
                         Tasks</button>
                 </div>
                 <div>
-                    <button className="buttons" onClick={() => setTaskList(taskList === false)}>
+                    <button className="buttons" onClick={() => setTaskList(false)}>
                         <FontAwesomeIcon icon={faCheck} className="icon-check" />
                         Done</button>
                 </div>
