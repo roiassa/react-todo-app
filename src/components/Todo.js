@@ -44,12 +44,12 @@ function Todo() {
                 </div>
             </div>
 
-            <form className="submit-form" onSubmit={handleSubmit}>
+            {taskList ? <form className="submit-form" onSubmit={handleSubmit}>
                 <input type="text" placeholder="Type your task here" value={input} onChange={(e) => setInput(e.target.value)} />
                 <button type="submit">Submit</button>
-            </form>
+            </form> : null}
             <div className="list-container">
-                {taskList ? <div className="list">
+                {taskList ? <div className="task-list">
                     {tasks.map((task, index) => {
                         return <div className="todo-item" key={index}>
                             <span>{task}</span>
@@ -57,7 +57,7 @@ function Todo() {
                             <button onClick={() => removeTask(tasks, task)}>Remove</button>
                         </div>
                     })}
-                </div> : <div className="list">
+                </div> : <div className="done-list">
                         {doneTasks.map((task, index) => {
                             return <div className="todo-item" key={index}> 
                                 <span>{task}</span>
