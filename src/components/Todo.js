@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faBriefcase } from '@fortawesome/free-solid-svg-icons'
 
@@ -6,7 +6,6 @@ import { faCheck, faBriefcase } from '@fortawesome/free-solid-svg-icons'
 
 function Todo() {
     const [tasks, setTasks] = useState([])
-    const [doneTasks, setDoneTasks] = useState([])
     const [input, setInput] = useState('')
     const [taskList, setTaskList] = useState(true)
     const [error, setError] = useState(false)
@@ -27,19 +26,15 @@ function Todo() {
         }
     }
 
-    // function removeTask(arr, taskToRemove) {
-    //     const updatedTasks = arr.filter((task) => taskToRemove !== task);
-    //     setTasks(updatedTasks);
-    // }
-
-    function removeTask(arr, taskToRemove) {
-        const updatedTasks = arr.filter((task) => taskToRemove !== task);
+    function handleClick(currArr, taskToRemove, keyName) {
+        const updatedTasks = currArr.map((task) => {
+            if(task.value === taskToRemove.value) {
+                task[keyName] = true;
+                return task;
+        }else{
+            return task;
+        }})
         setTasks(updatedTasks);
-    }
-
-    function doneTask(doneArr, currArr, taskToDone) {
-        setDoneTasks([...doneArr, taskToDone]);
-        removeTask(currArr, taskToDone);
     }
 
     return (
@@ -66,18 +61,18 @@ function Todo() {
             <div className="list-container">
                 {taskList ? <div className="task-list">
                     {tasks.map((task, index) => {
-                        return <div className="todo-item" key={index}>
+                        return task.isDone || task.toRemove ? null : <div className="todo-item" key={index}>
                             <span>{tasks[index].value}</span>
-                            <button onClick={() => doneTask(doneTasks, tasks, task)}>Done</button>
-                            <button onClick={() => removeTask(tasks, task)}>Remove</button>
+                            <button onClick={() => handleClick(tasks, task, 'isDone')}>Done</button>
+                            <button onClick={() => handleClick(tasks, task, 'toRemove')}>Remove</button>
                         </div>
                     })}
                 </div> : <div className="done-list">
-                        {doneTasks.map((task, index) => {
-                            return <div className="todo-item" key={index}>
+                        {tasks.map((task, index) => {
+                            return task.isDone && !task.toRemove ? <div className="todo-item" key={index}>
                                 <span>{tasks[index].value}</span>
-                                <button onClick={() => removeTask(doneTasks, task)}>Remove</button>
-                            </div>
+                                <button onClick={() => handleClick(tasks, task, 'toRemove')}>Remove</button>
+                            </div> : null;
                         })}
                     </div>}
             </div>
