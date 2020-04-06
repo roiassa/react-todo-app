@@ -5,11 +5,7 @@ import { faCheck, faBriefcase } from '@fortawesome/free-solid-svg-icons'
 
 
 function Todo() {
-    const [tasks, setTasks] = useState([{
-        value: null,
-        isDone: false,
-        toRemove: false
-    }])
+    const [tasks, setTasks] = useState([])
     const [doneTasks, setDoneTasks] = useState([])
     const [input, setInput] = useState('')
     const [taskList, setTaskList] = useState(true)
@@ -18,16 +14,18 @@ function Todo() {
     function handleSubmit(e) {
         e.preventDefault();
         if (!input) {
-            setError(true)
+            setError(true);
         }
         else {
             setError(false)
-            setTasks([...tasks, tasks.value = input])
+            setTasks([...tasks, {
+                value: input,
+                isDone: false,
+                toRemove: false
+            }])
             setInput('');
-            console.log(tasks.value);
         }
     }
-
 
     // function removeTask(arr, taskToRemove) {
     //     const updatedTasks = arr.filter((task) => taskToRemove !== task);
@@ -38,8 +36,6 @@ function Todo() {
         const updatedTasks = arr.filter((task) => taskToRemove !== task);
         setTasks(updatedTasks);
     }
-
-
 
     function doneTask(doneArr, currArr, taskToDone) {
         setDoneTasks([...doneArr, taskToDone]);
@@ -66,12 +62,12 @@ function Todo() {
                 <input type="text" placeholder="Type your task here" value={input} onChange={(e) => setInput(e.target.value)} />
                 <button type="submit">Submit</button>
             </form> : null}
-            
+
             <div className="list-container">
                 {taskList ? <div className="task-list">
                     {tasks.map((task, index) => {
                         return <div className="todo-item" key={index}>
-                            <span>{tasks.value}</span>
+                            <span>{tasks[index].value}</span>
                             <button onClick={() => doneTask(doneTasks, tasks, task)}>Done</button>
                             <button onClick={() => removeTask(tasks, task)}>Remove</button>
                         </div>
@@ -79,7 +75,7 @@ function Todo() {
                 </div> : <div className="done-list">
                         {doneTasks.map((task, index) => {
                             return <div className="todo-item" key={index}>
-                                <span>{tasks.value}</span>
+                                <span>{tasks[index].value}</span>
                                 <button onClick={() => removeTask(doneTasks, task)}>Remove</button>
                             </div>
                         })}
