@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faBriefcase } from '@fortawesome/free-solid-svg-icons'
 
@@ -15,6 +15,7 @@ function Todo() {
         if (!input) {
             setError(true);
         }
+
         else {
             setError(false)
             setTasks([...tasks, {
@@ -28,12 +29,13 @@ function Todo() {
 
     function handleClick(currArr, taskToRemove, keyName) {
         const updatedTasks = currArr.map((task) => {
-            if(task.value === taskToRemove.value) {
+            if (task.value === taskToRemove.value) {
                 task[keyName] = true;
                 return task;
-        }else{
-            return task;
-        }})
+            } else {
+                return task;
+            }
+        })
         setTasks(updatedTasks);
     }
 
