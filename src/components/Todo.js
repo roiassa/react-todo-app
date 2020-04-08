@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import uuidv4 from './Utils'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faBriefcase } from '@fortawesome/free-solid-svg-icons'
 
@@ -10,6 +12,14 @@ function Todo() {
     const [taskList, setTaskList] = useState(true)
     const [error, setError] = useState(false)
 
+    useEffect(() => {
+        axios.get(`http://localhost:5000/todos`)
+            .then(res => {
+                console.log(res);
+                setTasks(res.data)
+            })
+    }, [])
+
     function handleSubmit(e) {
         e.preventDefault();
         if (!input) {
@@ -18,11 +28,18 @@ function Todo() {
 
         else {
             setError(false)
-            setTasks([...tasks, {
+            const task = {
+                id: uuidv4(),
                 value: input,
                 isDone: false,
                 toRemove: false
-            }])
+            }
+            axios.post(`http://localhost:5000/todos`, task)
+                .then(res => {
+                    console.log(res.data)
+                    setTasks([...tasks, task])
+                })
+
             setInput('');
         }
     }
