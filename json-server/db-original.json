@@ -1,0 +1,10 @@
+{
+    "todos": [
+        {   
+            "id": 1,
+            "value": "First Task",
+            "isDone": false,
+            "toRemove": false
+        }
+    ]
+}
