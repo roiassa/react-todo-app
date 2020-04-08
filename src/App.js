@@ -15,8 +15,8 @@ function App() {
   return (
     <Router>
       <React.Fragment>
-        <Header />
         <Welcome />
+        <Header />
         <SideBar />
         <Route exact path="/" component={Todo}></Route>
         <Route exact path="/about" component={Header, About}></Route>
