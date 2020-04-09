@@ -1,3 +1,10 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "id": "3975d109-2b9e-4076-93a9-e1074685f379",
+      "value": "2",
+      "isDone": true,
+      "toRemove": false
+    }
+  ]
 }
