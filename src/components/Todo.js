@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import uuidv4 from './Utils'
+import uuidv4 from '../helpers/utils'
+import removeFromTasks, { updateIsDone, duplicateInput } from '../helpers/taskHelpers'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faBriefcase } from '@fortawesome/free-solid-svg-icons'
-
 
 
 function Todo() {
@@ -21,7 +21,7 @@ function Todo() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        if (!input) {
+        if (!input.trim() || duplicateInput(tasks, input)) {
             setError(true);
         }
 
@@ -53,8 +53,10 @@ function Todo() {
                             axios.patch(`http://localhost:5000/todos/${task.id}`, {
                                 isDone: true
                             })
+                            updateIsDone(tasks, task, setTasks)
                         } else {
                             axios.delete(`http://localhost:5000/todos/${task.id}`)
+                            removeFromTasks(tasks, task, setTasks)
                         }
                     })
                 return task;
@@ -81,7 +83,7 @@ function Todo() {
                         Done</button>
                 </div>
             </div>
-            {error && taskList ? <div className="error"><p>You have to type something in.</p> </div> : null}
+            {error && taskList ? <div className="error"><p>You have to type something in or you have duplicate task.</p> </div> : null}
             {taskList ? <form className="submit-form" onSubmit={handleSubmit}>
                 <input type="text" placeholder="Type your task here" value={input} onChange={(e) => setInput(e.target.value)} />
                 <button type="submit">Submit</button>
