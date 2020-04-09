@@ -48,10 +48,21 @@ function Todo() {
         const updatedTasks = currArr.map((task) => {
             if (task.value === taskToRemove.value) {
                 task[keyName] = true;
+                axios.get(`http://localhost:5000/todos/${task.id}`)
+                    .then(res => {
+                        if (keyName === 'isDone') {
+                            axios.patch(`http://localhost:5000/todos/${task.id}`, {
+                                isDone: true
+                            })
+                        } else {
+                            axios.delete(`http://localhost:5000/todos/${task.id}`)
+                        }
+                    })
                 return task;
             } else {
                 return task;
             }
+
         })
         setTasks(updatedTasks);
     }
