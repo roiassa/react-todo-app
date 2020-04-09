@@ -15,7 +15,6 @@ function Todo() {
     useEffect(() => {
         axios.get(`http://localhost:5000/todos`)
             .then(res => {
-                console.log(res);
                 setTasks(res.data)
             })
     }, [])
