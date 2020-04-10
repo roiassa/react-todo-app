@@ -23,7 +23,7 @@
         }
     }
 
-    button {
+    button, p {
         border: none;
         background: none;
         margin: 10px;
@@ -37,6 +37,18 @@
 
     
 }
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+
+    .register-form {
+        input {
+            margin-bottom: 10px;
+        }
+    }
+}
+
 .submit-btn {
     margin-left: 50px;
 }
