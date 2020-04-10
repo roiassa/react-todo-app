@@ -33,6 +33,14 @@ function Header() {
         }
     }
 
+    function handleClick() {
+        setLogin(false)
+        setRegister(false)
+        setError(false)
+        setEmailError(false)
+        setRegisterSuccess(false)
+    }
+
     return (
         <React.Fragment>
             <div className="header">
@@ -42,7 +50,7 @@ function Header() {
                     <React.Fragment><button onClick={() => setLogin(true)}>Login</button>
                         <button onClick={() => setRegister(true)}>Register</button></React.Fragment>}
                 {login ? <Modal style={{ marginTop: 230 }} show={true} >
-                    <Modal.Header closeButton onClick={() => setLogin(false)}>
+                    <Modal.Header closeButton onClick={handleClick}>
                         <Modal.Title>Login</Modal.Title>
                     </Modal.Header>
                     <Modal.Body className="modal-body">
@@ -58,13 +66,13 @@ function Header() {
                             </Alert> : null}
                         </form></Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={() => setLogin(false)}>
+                        <Button variant="secondary" onClick={handleClick}>
                             Close
                         </Button>
                     </Modal.Footer>
                 </Modal> : null}
                 {register ? <Modal style={{ marginTop: 230 }} show={true} >
-                    <Modal.Header closeButton onClick={() => setRegister(false)}>
+                    <Modal.Header closeButton onClick={handleClick}>
                         <Modal.Title>Register</Modal.Title>
                     </Modal.Header>
                     <Modal.Body className="modal-body">
@@ -83,7 +91,7 @@ function Header() {
                             </Alert> : null}
                         </form></Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={() => setRegister(false)}>
+                        <Button variant="secondary" onClick={handleClick}>
                             Close
                         </Button>
                     </Modal.Footer>
