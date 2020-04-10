@@ -10,26 +10,24 @@ function Header() {
     const [register, setRegister] = useState(false);
     const [login, setLogin] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
-    const [users, setUsers] = useState([]);
-    const [username, setUserName] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
     const [error, setError] = useState(false);
     const [emailError, setEmailError] = useState(false);
+    const [registerSuccess, setRegisterSuccess] = useState(false)
 
     function handleSubmit(e) {
         e.preventDefault();
-        if (!username || !password || !email) {
+        if (!password || !email) {
             setError(true)
         } else if (!email.includes('@' && '.com' || '.net' || '.co.il')) {
             setEmailError(true)
         }
         else {
             setLoggedIn(true)
-            setRegister(false)
+            setRegisterSuccess(true)
             setLogin(false)
             setError(false)
-            setUserName('')
             setPassword('')
             setEmail('')
         }
@@ -38,7 +36,7 @@ function Header() {
     return (
         <React.Fragment>
             <div className="header">
-                <Link exact to="/"><img src="https://i.pinimg.com/originals/57/40/bb/5740bb4e1da387df4d92a09475c9b049.png" alt="):" /></Link>
+                <Link to="/"><img src="https://i.pinimg.com/originals/57/40/bb/5740bb4e1da387df4d92a09475c9b049.png" alt="):" /></Link>
                 <h1>Todo-List</h1>
                 {loggedIn ? <React.Fragment><p>Welcome!</p> <button onClick={() => setLoggedIn(false)}>Log Out</button></React.Fragment> :
                     <React.Fragment><button onClick={() => setLogin(true)}>Login</button>
@@ -48,12 +46,12 @@ function Header() {
                         <Modal.Title>Login</Modal.Title>
                     </Modal.Header>
                     <Modal.Body className="modal-body">
-                        <form className="register-form" onSubmit={handleSubmit}>
-                            <p>Username/Email</p>
-                            <input type="text" value={email} placeholder="Your username or email" />
+                        <form onSubmit={handleSubmit}>
+                            <p>Email</p>
+                            <input type="text" value={email} placeholder="Your email" onChange={(e) => setEmail(e.target.value)} />
                             {emailError ? <p>Your email has to have a @ sign and one of the following endings: .com/.net/.co.il</p> : null}
                             <p>Password</p>
-                            <input type="password" value={password} placeholder="PasswordYour password" />
+                            <input type="password" value={password} placeholder="PasswordYour password" onChange={(e) => setPassword(e.target.value)} />
                             <Button className="submit-btn" type="submit" >Submit</Button>
                             {error ? <Alert variant="danger" onClose={() => setError(false)} dismissible>
                                 <Alert.Heading>You have to fill in all the fields!</Alert.Heading>
@@ -70,17 +68,18 @@ function Header() {
                         <Modal.Title>Register</Modal.Title>
                     </Modal.Header>
                     <Modal.Body className="modal-body">
-                        <form className="register-form" onSubmit={handleSubmit}>
-                            <p>Your username</p>
-                            <input type="text" value={username} onChange={(e) => setUserName(e.target.value)} />
-                            <p>Your password</p>
-                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                            <p>Email</p>
+                        <form onSubmit={handleSubmit}>
+                            <p>Your Email</p>
                             <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
                             {emailError ? <p>Your email has to have a @ sign and one of the following endings: .com/.net/.co.il</p> : null}
+                            <p>Your password</p>
+                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                             <Button className="submit-btn" type="submit" >Submit</Button>
                             {error ? <Alert variant="danger" style={{ marginTop: 10 }} onClose={() => setError(false)} dismissible>
                                 <Alert.Heading>You have to fill in all the fields!</Alert.Heading>
+                            </Alert> : null}
+                            {registerSuccess ? <Alert variant="success" onClose={() => setRegisterSuccess(false)} dismissible>
+                                <Alert.Heading>Success! Registered! Close this window to continue.</Alert.Heading>
                             </Alert> : null}
                         </form></Modal.Body>
                     <Modal.Footer>
