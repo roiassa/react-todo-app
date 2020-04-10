@@ -70,3 +70,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### 'sass watch
 
 npx sass src/css/main.scss src/dist/App.css --watch
+
+
+### json-server for the todos database
+1.install globally: npm install -g json-server
+2.run in the terminal this command: json-server --watch json-server/db.json --port 5000
