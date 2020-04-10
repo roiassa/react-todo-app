@@ -30,6 +30,7 @@
     border: 5px solid $theme-red;
     transition: all ease-in-out 0.3s;
     z-index: 1;
+    overflow: hidden;
     &:hover {
         box-shadow: 0px 0px 20px 20px $theme-red;
     }
@@ -37,9 +38,6 @@
     h1 {
         color: $theme-red;
         display: inline-block;
-        &:hover {
-            cursor: default;
-        }
     }
 
     .sections {
