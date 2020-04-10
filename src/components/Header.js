@@ -42,7 +42,6 @@ function Header() {
     }
 
     return (
-        <React.Fragment>
             <div className="header">
                 <Link to="/"><img src="https://i.pinimg.com/originals/57/40/bb/5740bb4e1da387df4d92a09475c9b049.png" alt="):" /></Link>
                 <h1>Todo-List</h1>
@@ -59,7 +58,7 @@ function Header() {
                             <input type="text" value={email} placeholder="Your email" onChange={(e) => setEmail(e.target.value)} />
                             {emailError ? <p>Your email has to have a @ sign and one of the following endings: .com/.net/.co.il</p> : null}
                             <p>Password</p>
-                            <input type="password" value={password} placeholder="PasswordYour password" onChange={(e) => setPassword(e.target.value)} />
+                            <input type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
                             <Button className="submit-btn" type="submit" >Submit</Button>
                             {error ? <Alert variant="danger" onClose={() => setError(false)} dismissible>
                                 <Alert.Heading>You have to fill in all the fields!</Alert.Heading>
@@ -97,7 +96,6 @@ function Header() {
                     </Modal.Footer>
                 </Modal> : null}
             </div>
-        </React.Fragment>
     )
 }
 
