@@ -35,10 +35,8 @@ function Todo() {
             }
             axios.post(`http://localhost:5000/todos`, task)
                 .then(res => {
-                    console.log(res.data)
                     setTasks([...tasks, task])
                 })
-
             setInput('');
         }
     }
@@ -83,6 +81,7 @@ function Todo() {
                         Done</button>
                 </div>
             </div>
+
             {error && taskList ? <div className="error"><p>You have to type something in or you have duplicate task.</p> </div> : null}
             {taskList ? <form className="submit-form" onSubmit={handleSubmit}>
                 <input type="text" placeholder="Type your task here" value={input} onChange={(e) => setInput(e.target.value)} />

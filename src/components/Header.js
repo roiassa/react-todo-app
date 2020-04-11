@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import Alert from 'react-bootstrap/Alert'
 import { Link } from 'react-router-dom';
-
 
 
 function Header() {
@@ -45,11 +44,12 @@ function Header() {
             <div className="header">
                 <Link to="/"><img src="https://i.pinimg.com/originals/57/40/bb/5740bb4e1da387df4d92a09475c9b049.png" alt="):" /></Link>
                 <h1>Todo-List</h1>
+
                 {loggedIn ? <React.Fragment><p>Welcome!</p> <button onClick={() => setLoggedIn(false)}>Log Out</button></React.Fragment> :
                     <React.Fragment><button onClick={() => setLogin(true)}>Login</button>
                         <button onClick={() => setRegister(true)}>Register</button></React.Fragment>}
                 {login ? <Modal style={{ marginTop: 230 }} show={true} >
-                    <Modal.Header closeButton onClick={handleClick}>
+                    <Modal.Header >
                         <Modal.Title>Login</Modal.Title>
                     </Modal.Header>
                     <Modal.Body className="modal-body">
@@ -70,8 +70,9 @@ function Header() {
                         </Button>
                     </Modal.Footer>
                 </Modal> : null}
+
                 {register ? <Modal style={{ marginTop: 230 }} show={true} >
-                    <Modal.Header closeButton onClick={handleClick}>
+                    <Modal.Header >
                         <Modal.Title>Register</Modal.Title>
                     </Modal.Header>
                     <Modal.Body className="modal-body">
