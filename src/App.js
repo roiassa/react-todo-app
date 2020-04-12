@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './components/Header'
+import Header from './components/overlay/Header'
 import Welcome from './components/Welcome'
 import About from './components/About'
-import SideBar from './components/SideBar'
+import SideBar from './components/overlay/SideBar'
 import Todo from './components/Todo'
 import './dist/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
