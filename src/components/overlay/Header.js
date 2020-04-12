@@ -70,7 +70,7 @@ function Header() {
                         <form onSubmit={handleSubmit}>
                             <p>Email</p>
                             <input type="text" value={email} placeholder="Your email" onChange={(e) => setEmail(e.target.value)} />
-                            {emailError ? <p>Your email has to have a @ sign and one of the following ending: .com</p> : null}
+                            {emailError ? <p>Your email has to have a @ sign and the following ending: .com</p> : null}
                             <p>Password</p>
                             <input type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
                             <Button className="submit-btn" type="submit" >Submit</Button>
@@ -93,7 +93,7 @@ function Header() {
                         <form onSubmit={handleSubmit}>
                             <p>Your Email</p>
                             <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-                            {emailError ? <p>Your email has to have a @ sign and one of the following ending: .com</p> : null}
+                            {emailError ? <p>Your email has to have a @ sign and the following ending: .com</p> : null}
                             <p>Your password</p>
                             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                             <Button className="submit-btn" type="submit" >Submit</Button>

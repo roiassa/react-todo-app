@@ -19,7 +19,7 @@ function App() {
         <Header />
         <SideBar />
         <Route exact path="/" component={Todo}></Route>
-        <Route exact path="/about" component={Header, About}></Route>
+        <Route exact path="/about" component={About}></Route>
       </React.Fragment>
     </Router>
   )
