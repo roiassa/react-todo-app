@@ -1,0 +1,324 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  display: flex;
+  font-family: "Sans Serif", sans-serif;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: #333333;
+  text-decoration: none;
+}
+
+h1:hover, h2:hover, p:hover {
+  cursor: default;
+}
+
+a, span, button {
+  text-decoration: none !important;
+  outline: none !important;
+}
+a:hover, span:hover, button:hover {
+  text-decoration: none !important;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 135px;
+  width: 100%;
+  background-color: #242323;
+}
+.header img {
+  width: 200px;
+  height: 120px;
+  margin-top: 10px;
+}
+.header h1 {
+  font-size: 50px;
+  color: #A62C2A;
+  margin-left: 400px;
+  margin-right: 500px;
+}
+.header h1:hover {
+  color: white;
+  text-shadow: 2px 2px 8px #A62C2A;
+}
+.header button, .header p {
+  border: none;
+  background: none;
+  margin: 10px;
+  color: #A62C2A;
+  outline: none;
+}
+.header button:hover, .header p:hover {
+  color: white;
+  text-shadow: 2px 2px 8px #A62C2A;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+}
+.modal-body form input {
+  margin-bottom: 10px;
+}
+
+.submit-btn {
+  margin-left: 50px;
+}
+
+.welcomeDiv {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 804px;
+  z-index: 2;
+}
+.welcomeDiv .loadingDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #a51e56;
+  color: white;
+  width: 100%;
+  height: 20%;
+  box-shadow: 0px 0px 200px 500px #d6c8c3;
+}
+
+.side-bar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: #A62C2A;
+  height: 100%;
+  width: 3%;
+  transition: all ease-in-out 0.5s;
+  z-index: 1;
+}
+.side-bar:hover {
+  width: 10%;
+}
+.side-bar:hover .nav-link {
+  display: block;
+}
+.side-bar .link-div {
+  display: flex;
+  flex-direction: row;
+}
+.side-bar .link-div:hover {
+  background-color: #535353;
+  cursor: pointer;
+}
+.side-bar .link-div:hover .icon-home, .side-bar .link-div:hover .icon-user {
+  color: #A62C2A;
+}
+.side-bar .link-div:hover .nav-link {
+  color: #A62C2A;
+}
+.side-bar .icon-home, .side-bar .icon-user {
+  font-size: 20px;
+  color: #333333;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+.side-bar .icon-home:hover, .side-bar .icon-user:hover {
+  cursor: pointer;
+}
+.side-bar .icon-user {
+  margin-left: 14px;
+}
+.side-bar .nav-link {
+  color: #333333;
+  display: none;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.about-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  color: #A62C2A;
+}
+.about-div:hover {
+  color: white;
+  text-shadow: 2px 2px 8px #A62C2A;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  border: 7px solid #A62C2A;
+  border-radius: 10px 10px 10px 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bb5858;
+  border-radius: 10px 10px 10px 10px;
+  margin-right: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+.todo-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #242323;
+  margin: auto;
+  margin-top: 100px;
+  width: 30%;
+  height: 500px;
+  border: 5px solid #A62C2A;
+  transition: all ease-in-out 0.3s;
+  z-index: 1;
+  overflow: hidden;
+}
+.todo-window:hover {
+  box-shadow: 0px 0px 20px 20px #A62C2A;
+}
+.todo-window h1 {
+  color: #A62C2A;
+  display: inline-block;
+}
+.todo-window .sections {
+  display: flex;
+  width: 100%;
+}
+.todo-window .sections div {
+  width: 50%;
+}
+.todo-window .sections .buttons {
+  background: #A62C2A;
+  color: #333333;
+  border-color: #A62C2A;
+  border: solid;
+  width: 100%;
+  padding: 5px;
+}
+.todo-window .sections .buttons:hover {
+  color: white;
+}
+.todo-window .sections .buttons .icon-briefcase,
+.todo-window .sections .buttons .icon-check {
+  margin-right: 5px;
+}
+.todo-window .error {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  color: #A62C2A;
+  border: solid 3px #A62C2A;
+  transition: all ease-in-out 0.3s;
+}
+.todo-window .error:hover {
+  border-color: red;
+  color: red;
+}
+.todo-window .error p {
+  margin-bottom: 0px;
+}
+.todo-window .submit-form {
+  width: 95%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.todo-window .submit-form input {
+  width: 370px;
+  margin-left: 20px;
+  outline: none;
+}
+.todo-window .submit-form button {
+  height: 100%;
+  width: 60px;
+  background: #A62C2A;
+  color: #333333;
+  border-color: #A62C2A;
+  border: none;
+  border-radius: 0px 20px 20px 0px;
+}
+.todo-window .submit-form button:hover {
+  color: white;
+}
+.todo-window .list-container {
+  overflow: auto;
+  height: 100%;
+  width: 97%;
+}
+.todo-window .list-container .task-list, .todo-window .list-container .done-list {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.todo-window .list-container .task-list .todo-item, .todo-window .list-container .done-list .todo-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 2px solid #242323;
+}
+.todo-window .list-container .task-list .todo-item:hover, .todo-window .list-container .done-list .todo-item:hover {
+  background: #A62C2A;
+  cursor: pointer;
+}
+.todo-window .list-container .task-list .todo-item:hover span, .todo-window .list-container .done-list .todo-item:hover span {
+  color: #333333;
+}
+.todo-window .list-container .task-list .todo-item:hover button, .todo-window .list-container .done-list .todo-item:hover button {
+  color: #A62C2A;
+  background-color: #333333;
+}
+.todo-window .list-container .task-list .todo-item span, .todo-window .list-container .done-list .todo-item span {
+  color: #A62C2A;
+  width: 75%;
+  padding-left: 5px;
+}
+.todo-window .list-container .task-list .todo-item span:hover, .todo-window .list-container .done-list .todo-item span:hover {
+  color: white;
+}
+.todo-window .list-container .task-list .todo-item button, .todo-window .list-container .done-list .todo-item button {
+  background: #A62C2A;
+  color: #333333;
+  border-color: #A62C2A;
+  border-radius: 30px 30px 30px 30px;
+  border-style: none;
+  padding: 5px;
+  margin-right: 7px;
+}
+.todo-window .list-container .task-list .todo-item button:hover, .todo-window .list-container .done-list .todo-item button:hover {
+  color: red;
+}
+.todo-window .list-container .done-list {
+  margin-top: 55px;
+}
+.todo-window .list-container .done-list button {
+  margin-left: 100px;
+}
+
+/*# sourceMappingURL=App.css.map */

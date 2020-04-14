@@ -4,7 +4,7 @@ import Welcome from './components/Welcome'
 import About from './components/About'
 import SideBar from './components/overlay/SideBar'
 import Todos from './components/todo-window/Todos'
-import './dist/App.css';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
