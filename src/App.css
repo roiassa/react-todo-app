@@ -321,4 +321,11 @@ a:hover, span:hover, button:hover {
   margin-left: 100px;
 }
 
+.error-page {
+  background-color: white;
+  height: 804px;
+  display: flex;
+  justify-content: center;
+}
+
 /*# sourceMappingURL=App.css.map */
