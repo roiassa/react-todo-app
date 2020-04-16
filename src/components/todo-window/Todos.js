@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import TodoItem from "./TodoItem"
 import Sections from "./Sections"
 import ErrorPage from "../ErrorPage"
 import apiCall from '../../helpers/apiCall'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 
 function Todos() {

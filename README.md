@@ -69,7 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### 'sass watch
 
-npx sass src/css/main.scss src/dist/App.css --watch
+npx sass src/css/main.scss src/App.css --watch
 
 
 ### json-server for the todos database
