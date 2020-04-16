@@ -3,6 +3,8 @@ import axios from 'axios';
 import TodoItem from "./TodoItem"
 import Sections from "./Sections"
 import ErrorPage from "../ErrorPage"
+import apiCall from '../../helpers/apiCall'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 
 function Todos() {
@@ -11,20 +13,12 @@ function Todos() {
     const [error, setError] = useState(false)
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/todoss`)
-            .then(res => {
-                setTasks(res.data)
-            })
-            .catch(err => {
-                if (err.response.status === 404) {
-                    setError(true);
-                }
-            })
+      apiCall(`http://localhost:5000/todos`, setTasks, setError)
     }, [])
 
     return (
         <React.Fragment>
-            {error ? <ErrorPage />
+            {error ? <React.Fragment><ErrorPage /></React.Fragment>
                 :
                 <div className="todo-window">
                     <Sections setTasks={setTasks} tasks={tasks} taskList={taskList} setTaskList={setTaskList} />
