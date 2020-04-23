@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TodoItem from "./TodoItem"
 import Sections from "./Sections"
 import ErrorPage from "../ErrorPage"
-import apiCall from '../../helpers/apiCall'
+import apiGet from '../../helpers/apiCall'
 
 
 function Todos() {
@@ -11,7 +11,7 @@ function Todos() {
     const [error, setError] = useState(false)
 
     useEffect(() => {
-      apiCall(`http://localhost:5000/todos`, setTasks, setError)
+      apiGet(setTasks, setError)
     }, [])
 
     return (

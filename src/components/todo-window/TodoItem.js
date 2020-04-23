@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
-import removeFromTasks, { updateIsDone} from '../../helpers/taskHelpers'
+import removeFromTasks, { updateIsDone } from '../../helpers/taskHelpers'
+import editApi from '../../helpers/apiCall'
 
 function TodoItem(props) {
     function handleClick(currArr, taskToRemove, keyName) {
